@@ -1,0 +1,72 @@
+.Patientregistc-maindiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Patientregistc-parent1{
+    max-width: 400px ;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.Patientregistc-parent1 .input-col-box{
+    margin-top: 15px;
+}
+.Patientregistc-parent1 .input-col-box label{
+    font-size: 17px;
+    margin-top: 20px;
+    font-family: cursive;
+}
+.Patientregistc-parent1 .input-col-box input{
+    width: 97%;
+    height: 30px;
+    padding-left: 8px ;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.Patientregistc-parent1 .input-col-box textarea{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.Patientregistc-parent1 .input-box-row{
+    display: flex;
+    gap: 10px;
+} 
+.Patientregistc-parent1 .input-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.Patientregistc-parent1 .input-button button{
+    height: 35px;
+    width: 130px;
+    font-size: 18px;
+    font-family: cursive;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Patientregistc-parent1 .patient-header{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-family:'Times New Roman', Times, serif;
+}
+.Patientregistc-parent1 .switching-account{
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    margin-top: 10px;
+}
+.Patientregistc-parent1 .switching-account span{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.PatientRegist-maindiv{
+    background-image: url("https://img.freepik.com/free-photo/stethoscope-copy-space_23-2147652347.jpg");
+    background-image: 100% 100%;
+    width: 100%;
+}

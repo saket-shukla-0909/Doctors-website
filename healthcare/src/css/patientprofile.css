@@ -1,0 +1,98 @@
+.pat-prof-maindiv{
+    height: 540px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pat-prof-main{
+    height: 540px;
+    width: 60%;
+    display: flex;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+.pat-prof-parent1{
+    height: 540px;
+    width: 50%;
+}
+.pat-prof-child1{
+    height:400px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: blueviolet;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.pat-prof-child1 img{
+    height:400px;
+    width: 100%;
+    border-radius: 10px;
+}
+.pat-prof-parent2{
+    height: 540px;
+    width: 50%;
+}
+.pat-prof-parent2-child1{
+    margin-top: 20px;
+}
+.pat-prof-parent2-child1 h2{
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+}
+.pat-prof-parent2-child1 h1{
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 10px;
+    text-align: center;
+}
+.pat-prof-parent2-child1 p{
+    font-size: 18px;
+    margin-top: 10px;
+    font-family:serif;
+}
+.pat-prof-parent2-child2{
+    height: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.pat-prof-parent2-child2 h3{
+    /* text-align: center; */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.pat-prof-parent2-child2 div{
+    height:30px;
+    margin-left: 10px;
+    font-size: 18px;
+    /* font-family: cursive; */
+}
+.pat-prof-parent2-child3{
+    height: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.pat-prof-parent2-child3 h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.pat-prof-parent2-child3 div{
+    height:30px;
+    margin-left: 10px;
+    font-size: 18px;
+}    
+.con-icon , .con-add{
+        color: blue;
+}
+.email-icon{
+        color: red;
+}

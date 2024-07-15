@@ -1,0 +1,375 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+/* Header CSS start */
+.maindiv-head{
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.maindiv-head{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  font-size: 18px;
+  font-family: cursive;
+}
+.parent1div-head{
+  display: flex;
+  gap: 20px;
+}
+.parent1div-head .child1{
+  border-right: 1px solid white;
+  padding-right: 18px;
+}
+.parent2div-head{
+  display: flex;
+  gap: 20px;
+}
+.parent2div-head .child1{
+  border-right: 1px solid white;
+  padding-right: 18px;
+}
+.head-icon1{
+  color: white;
+}
+.parent2div-head div .span1{
+  color: red;
+}
+.parent2div-head div .span2{
+  color: blue;
+}
+.parent2div-head div .head-icon2{
+  font-size: 13px;
+}
+/* media for responsive website  */
+@media (max-width:880px){
+  .parent1div-head{
+    display: none;
+  }
+}
+/* Header CSS end */
+
+/* Navbar CSS start */
+.docImg{
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+}
+.maindiv-nav{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  background-color: blueviolet;
+}
+.parent1div-nav img{
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin-top: 4px;
+}
+.parent2div-nav{
+  display: flex;
+  gap: 15px;
+  font-size: 19px;
+  font-family: cursive;
+  cursor: pointer;
+}
+.parent2div-nav div{
+  padding: 10px 20px;
+  color: black;
+}
+.parent2div-nav div:hover{
+  /* background-color:bisque; */
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+/* Navbar CSS end */
+
+/* Home CSS start*/
+  .div1-home{
+    background-image: url('../public/img_folder/img1.jpg');
+    background-size: 100% 100%;
+    height: 350px;
+    width: 100%;
+  }
+  .homediv1-parent1 img{
+    height: 200px;
+    width: 200px;
+    /* opacity: 0.8; */
+    border-radius: 130px;
+    position: relative;
+    bottom: 170px;
+    left: 1000px;
+  }
+  .div1-home pre{
+    padding-top: 70px;
+    padding-left: 190px;
+    color: white;
+    font-size: 35px;
+  }
+  .div1-home .button-appoint{
+    height: 35px;
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 250px;
+    font-size: 16px;
+    font-family: cursive;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .div1-home .homediv1-parent2{
+    position: fixed;
+    height: 440px;
+    width: 500px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    bottom: 150px;
+    left: 500px;
+  }
+  .appoint-error{
+    text-align: center;
+    color: green;
+    padding-top: 10px;
+  }
+  .div1-home .homediv1-parent2 span button{
+    margin-left: 210px;
+    cursor: pointer;
+    height:30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 3px;
+    border: 1px solid black;
+  }
+  .div1-home .homediv1-parent2 .appoint-header{
+    text-align: center;
+    font-size: 26px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 15px;
+  }
+  .div1-home .homediv1-parent2 .parent2-child{
+    height: 295px;
+    border-radius: 6px;
+    display: flex;
+  }
+  .div1-home .homediv1-parent2 .parent2-child div{
+    height: 295px;
+    width:50%;
+  }
+  .book-appoint{
+    width: 100%;
+  }
+  .div1-home .homediv1-parent2 .parent2-child .book-appoint div{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .div1-home .homediv1-parent2 .parent2-child .book-appoint div label{
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+  .div1-home .homediv1-parent2 .parent2-child .book-appoint div input{
+    width: 86%;
+    margin-left: 4%;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 5px;
+  }
+  .div1-home .homediv1-parent2 .parent2-child .book-appoint div .time{
+    width: 35%;
+  }
+  .div1-home .homediv1-parent2 .parent2-child .book-appoint div textarea{
+    width: 90%;
+    margin-left: 4%;
+    margin-top: 10px;
+    height: 50px;
+    background-color: white;
+  }
+  .div1-home .homediv1-parent2 .parent2-child div img{
+    height: 295px;
+    width: 100%;
+  }
+  .div1-home .homediv1-parent2 .button{
+    width: 100%;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .div1-home .homediv1-parent2 .button div{
+    height: 45px;
+    width: 30%;
+  }
+  .div1-home .homediv1-parent2 .button div .Cancel {
+    height: 40px;
+    width: 100%;
+    margin-top: 3px;
+    background-color: rgb(89, 43, 183);
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: cursive;
+    cursor: pointer;
+  }
+  .div1-home .homediv1-parent2 .button div .Book{
+    height: 40px;
+    width: 100%;
+    margin-top: 3px;
+    background-color: orange;
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: cursive;
+    cursor: pointer;
+  }
+  .div2-home{
+    height: 250px;
+    width: 100%;
+  }
+  .div2-home .div2-parent1{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 20px;
+    color: white;
+  }
+  .div2-home .div2-parent2{
+    height: 170px;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-image: url("https://img.freepik.com/free-photo/autumn-leaf-falling-revealing-intricate-leaf-vein-generated-by-ai_188544-9869.jpg");
+    background-size: 100% 100%;
+    border-radius: 5px;
+
+  }
+  .div2-home .div2-parent2 div{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:bisque ;
+    margin-top: 10px;
+  }
+  /* blanchedalmond */
+  .div2-home .div2-parent2 div .icon{
+    font-size: 45px;
+    margin-top: 25px;
+    margin-left: 50px;
+    color: blue;
+  }
+  .div2-home .div2-parent2 div p{
+    text-align: center;
+    margin-top: 10px;
+    font-family: cursive;
+  }
+/* Home CSS end */
+/* footer CSS start*/
+.maindiv-footer{
+  height:250px;
+  width: 100%;
+  background-color: rgb(252, 182, 77);
+  display: flex;
+  justify-content: center;
+}
+.maindiv-footer div{
+  height: 250px;
+  width: 24%;
+}
+.maindiv-footer div h2{
+  margin-left: 80px;
+  margin-top: 15px;
+}
+.maindiv-footer div p{
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.maindiv-footer div p .icon1{
+  color: red;
+}
+.maindiv-footer div p .icon2{
+  color: green;
+}
+.maindiv-footer div p .icon3{
+  color: blue;
+}
+.maindiv-footer .child1{
+  height: 80px;
+  width: 366px;
+  margin-top: 10px;
+}
+.maindiv-footer .child1 .input1{
+  height: 35px;
+  width: 70%;
+  margin-left: 10%;
+  font-family: cursive;
+  text-align: center;
+  border-radius:5px ;
+}
+.maindiv-footer .child1 .input2{
+  height: 35px;
+  width: 40%;
+  margin-left: 25%;
+  background-color: blue;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: cursive;
+  font-size: 18px;
+}
+.maindiv-footer .child2{
+  margin-top: 20px;
+  height: 40px;
+  width: 90%;
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.maindiv-footer .child2 div{
+  height:35px;
+  width:30px;
+}
+.social1-footer{
+  color: blue;
+}
+.social2-footer{
+  color:black;
+}
+.social3-footer{
+  color: red;
+}
+.social4-footer{
+  color: blue;
+}
+@media(max-width:700px){
+  .maindiv-footer{
+    display: block;
+    height: 1050px;
+
+  }
+  .maindiv-footer div{
+    width: 100%;
+  }
+  .maindiv-footer div h2{
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+}
+/* footer CSS end */

@@ -1,0 +1,74 @@
+.Myprof-maindiv{
+    height: 553px;
+    width: 100%;
+}
+.Myprof-div1{
+    height: 550px;
+    width: 60%;
+    margin-left: 20%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+.Myprof-child1{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.Myprof-child1 div{
+    height: 400px;
+    width: 40%;
+}
+.Myprof-child1 .Profile div{
+    height: 200px; 
+    width: 100%;
+}
+.Myprof-child2{
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+    display: flex;
+}
+.Myprof-child2 div{
+    height: 150px;
+    width: 40%;
+}
+.profile, .biography, .contact{
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.doctorname{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.doctorspeciality{
+    margin-left: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.degree, .p{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.h4{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.span1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.p2{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.docImgp{
+    height: 400px;
+    width: 350px;
+    margin-top: 5px;
+    border-radius: 5px;
+}

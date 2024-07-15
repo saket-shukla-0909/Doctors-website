@@ -1,0 +1,11 @@
+const express = require('express');
+const doctorscontrollers = require('../controllers/doctorscontrollers');
+const router = express.Router();
+router.get('/doctorlist',doctorscontrollers.doctorlist);
+router.get('/singledoctorlist/(:id)', doctorscontrollers.singledoctorlist);
+router.post('/registration',doctorscontrollers.registration);
+router.delete('/deletedoctor/(:id)', doctorscontrollers.deletedoctor);
+// router.put('/updatedoctor/(:id)', doctorscontrollers.updatedoctor);
+router.post('/logindoctor', doctorscontrollers.logindoctor);
+router.put('/updatedoctor/(:id)', doctorscontrollers.imageupload, doctorscontrollers.updatedoctor);
+module.exports = router;

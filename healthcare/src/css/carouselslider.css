@@ -1,0 +1,330 @@
+.about-body{
+    height: 1800px;
+    width: 100%;
+    /* background-image: url("https://e0.pxfuel.com/wallpapers/255/13/desktop-wallpaper-awesome-laptop-for-your-mobile-tablet-explore-awesome-laptop-awesome-laptop-awesome-laptop-background-awesome-laptop-awesome-cool-thumbnail.jpg");
+    background-size: 100% 100%; */
+    background-color: black;
+}
+.car-div{
+    width:100%;
+    height: 450px;
+    background-color: black;
+}
+.slider-maindiv{
+    width: 95%;
+    height: 450px;
+    margin-left: 2.5%;
+}
+.imgslider{
+    width: 100%;
+    height: 400px;
+}
+.imgslider img{
+    height: 400px;
+    width: 100%;
+}
+.aboutus{
+    font-size: 45px;
+    position: absolute;
+    bottom: 550px;
+    left: 500px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* About CSS */
+.about-div1{
+    position: absolute;
+    font-size: 40px;
+    bottom: 360px;
+    left: 490px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.about-div1 .span1{
+    color: darkblue;
+}
+.about-div1 .h3{
+    font-size: 16px;
+    margin-top: 20px;
+    color: lightblue;
+}
+.about-div2{
+    height:380px;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    gap: 10px;
+}
+.about-div2 .div2-parent{
+    height: 370px;
+    width: 100%;
+    background-image: url("https://png.pngtree.com/background/20210709/original/pngtree-minimalistic-doctor-running-medical-background-picture-image_961321.jpg");
+    background-size: 100% 100%;
+    border-radius: 5px;
+    z-index: 1;
+}
+.about-div2 .div2-parent .div2-child1{
+    height: 120px;
+    font-size: 80px;
+    padding-left: 110px;
+    padding-top: 40px;
+}
+.about-div2 .div2-parent h3{
+    text-align: center;
+    padding-top: 10px;
+    color: lightblue;
+}
+.about-div2 .div2-parent p{
+    text-align: center;
+    padding: 10px 40px;
+    color: black;
+    z-index: 1;
+}
+.about-div2 .div2-parent .div2-child1 .icon1{
+    color: white;
+    background-color: black;
+    border-radius: 40px;
+}
+.about-div2 .div2-parent .div2-child1 .icon2{
+    color: blue;
+    background-color: white;
+    border-radius: 50px;
+}
+.about-div2 .div2-parent .div2-child1 .icon3{
+    background-color: white;
+    border-radius: 50px;
+}
+.about-div2 .div2-parent .div2-child1 .icon4{
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+}
+/* about-div3 css */
+.about-div3{
+    height: 400px;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.about-div3 .div3-parent{
+    height: 400px;
+    width: 100%;
+}
+.about-div3 .div3-parent .div3-header{
+    width:80%;
+    margin-left: 10%;
+    font-family:'Times New Roman', Times, serif ;
+    padding-top: 30px;
+    color: black;
+}
+.about-div3 .div3-parent .div3-para{
+    margin-left: 20%;
+    margin-top: 20px;
+    width: 80%;
+}
+.about-div3 .div3-parent .div3-para p{
+    padding-top: 10px;
+}
+.about-div3 .div3-parent .div3-para .div3-icons{
+    color: blue;
+    border-radius: 50px;
+}
+.about-div3 .div3-parent .button{
+    height: 50px;
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+.about-div3 .div3-parent .button input{
+    height: 35px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: lime;
+    font-size: 16px;
+    font-family: cursive;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.div3-child{
+    position: relative;
+    height: 250px;
+    width: 60%;
+    top: 90px;
+    left: 140px;
+}
+.about-div3 .div3-parent .div3-child img{
+    height: 250px;
+    width: 100%;
+    border-radius:5px;
+}
+.about-div3 .div3-parent .checkup{
+    height: 30px;
+    width: 160px;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+    position: relative;
+    top: 55px;
+    left: 300px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.about-div3 .div3-parent .checkup .icons{
+    color: blue;
+    padding-right: 5px;
+}
+.about-div3 .div3-parent  .checkup1{
+    height:130px;
+    width: 200px;
+    position: relative;
+    background-color: lightblue;
+    bottom: 230px;
+    left: 30px;
+    border-radius: 5px;
+}
+.about-div3 .div3-parent  .checkup1 p{
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.about-div3 .div3-parent  .checkup1 .p1{
+    font-size: 12px;
+}
+.about-div3 .div3-parent .img{
+    height: 50px;
+}
+.about-div3 .div3-parent .img img{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+}
+.about-div3 .div3-parent .img .icons{
+    font-size: 30px;
+    padding-bottom: 6px;
+    color: blue;
+    border-radius: 50px;
+}
+.about-div4{
+    height: 450px;
+    width: 100%;
+    margin-top: 20px;
+}
+.about-div4 .div4-head{
+    color: white;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.about-div4 .div4-parent1{
+    height: 350px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
+    display: flex;
+    gap: 5px;
+    border-radius: 10px;
+}
+.about-div4 .div4-parent1 div{
+    height:350px;
+    width: 100%;
+}
+.about-div4 .div4-parent1 .div4-child1 img{
+    height:350px;
+    width: 100%;
+}
+.about-div4 .img{
+    height: 250px;
+    width: 350px;
+    position: relative;
+    bottom: 300px;
+    left: 390px;
+    border-radius: 5px;
+    box-shadow:  5px 5px 3px 3px green;
+}
+.about-div4 .div4-parent1 .div4-child2 h1{
+   padding: 20px;
+   font-family:'Times New Roman', Times, serif;
+
+}
+.about-div4 .div4-parent1 .div4-child2 p{
+    padding: 0px 20px;
+    padding-bottom: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.about-div4 .div4-parent1 .div4-child2div{
+    width: 80%;
+    margin-left: 10%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.about-div4 .div4-parent1 .div4-child2div div{
+    height: 120px;
+    width: 100%;
+    background-color: lightblue;
+    border-radius: 5px;
+    text-align: center;
+}
+.about-div4 .div4-parent1 .div4-child2div div .para{
+    margin-top: 25px;
+    font-size: 20px;
+}
+.about-div4 .div4-parent1 .div4-child2div div p{
+    font-family: cursive;
+}
+.about-div5{
+    height: 500px;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.about-div5 .div5-parent1 img{
+    height: 500px;
+    width: 100%;
+}
+.about-div5 .div5-parent2{
+    height: 450px;
+    width:50%;
+    position: absolute;
+    left: 710px;
+    top: 1845px;
+    padding-top: 50px;
+    /* margin-top: 35px; */
+}
+.about-div5 .div5-parent2 div{
+    height: 150px;
+    width:85%;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+.about-div5 .div5-parent2  .div5-child{
+    height: 130px;
+    width:85%;
+    display: flex;
+    /* margin-top: 20px; */
+}
+.about-div5 .div5-parent2  .div5-child .icon-div{
+    height: 130px;
+    width: 20%;
+    /* margin-top: 10px; */
+}
+.about-div5 .div5-parent2  .div5-child .para{
+    height: 130px;
+    width: 100%;
+    /* margin-top: 10px; */
+ 
+}
+.about-div5 .div5-parent2  .div5-child .icon-div .icon{
+    font-size: 45px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: blue;
+}

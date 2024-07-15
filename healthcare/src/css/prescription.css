@@ -1,0 +1,119 @@
+
+/* First part css of Prescription start */
+.presmain-div1{
+    background-image: url('https://t4.ftcdn.net/jpg/06/20/45/71/360_F_620457182_GKepjPJxE4oWcaOyuDew6U94Q9WgPF0R.jpg');
+    width: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.presmain-div1 .div1-parent1{
+    max-width: 400px;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+.presmain-div1 .div1-parent1 .div1-header{
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.presmain-div1 .div1-parent1 .registheader-span{
+    font-size: 15px;
+}
+.pres-form-col1{
+    margin-top: 20px;
+    display: flex;
+}
+.pres-form-col1 label,.pres-form-col2 label{
+    margin-top: 10px;
+    font-family: cursive;
+}
+.pres-form-col1 .input5{
+    margin-top: 10px;
+    width: 90%;
+    height:30px;
+    padding-left: 5px;
+}
+.pres-form-col1 .input1{
+    margin-top: 10px;
+    width: 80%;
+    height:30px;
+    padding-left: 5px;
+}
+.pres-form-col1 .input2{
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    padding-left: 5px;
+}
+.pres-form-col2{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+.pres-form-col2 .input3{
+    margin-top: 10px;
+    width: 87%;
+    height: 30px;
+}
+.pres-form-col2 .input4{
+    margin-top: 20px;
+    height: 15px;
+    margin-right: 5px;
+    font-size: 20px;
+    width: 10%;
+}
+.pres-form-col2 span{
+    font-size: 16px;
+    margin-right: 5px;
+}
+.presmain-div1 .pres-form-col3{
+    margin-top: 20px;
+}
+.presmain-div1 .pres-form-col3 label{
+    margin-top: 10px;
+    font-family: cursive;
+}
+.presmain-div1 .pres-form-col3 textarea{
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.presmain-div1 .pres-form-col4{
+    margin-top: 20px;
+}
+.presmain-div1 .pres-form-col4 label{
+    font-family: cursive;
+}
+.presmain-div1 .pres-form-col4 input{
+    height:30px;
+    width: 96%;
+    margin-top: 10px;
+    padding-left: 10px;
+    
+}
+.regist-button-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.presmain-div1 button{
+    height:35px;
+    margin-top: 15px;
+    width: 150px;
+    background-color: lightblue;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: cursive;
+}
+.loginpage-maindiv{
+    background-color: black;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}

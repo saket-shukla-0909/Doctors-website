@@ -1,0 +1,218 @@
+ .body-div{
+    height: 2180px;
+    background-image: url("https://e0.pxfuel.com/wallpapers/255/13/desktop-wallpaper-awesome-laptop-for-your-mobile-tablet-explore-awesome-laptop-awesome-laptop-awesome-laptop-background-awesome-laptop-awesome-cool-thumbnail.jpg");
+    background-size: 100% 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+ }
+ .Mycard-maindiv2{
+    width:92%;
+    margin-left: 4%;
+    height:200px;
+} 
+.mycard-div2{
+    height: 200px;
+}
+.mycard2-imgslider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+.mycard2-imgslider img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-left: 8p;
+}
+.mycard2-imgslider img:hover{
+    opacity: 1;
+}
+.Mycard-maindiv{
+    width:92%;
+    margin-left: 4%;
+    height:500px;
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 12px;
+}
+.Mycard3-maindiv{
+    width:92%;
+    margin-left: 4%;
+    height:380px;
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 12px;
+}
+.mycard-div1{
+    height: 450px;
+    background-color: white;
+    color: black;
+    /* border: 2px solid black; */
+}
+.mycard-imgslider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 95%;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+.mycard2-imgslider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 95%;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+.mycard3-imgslider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 95%;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+.mycard3-imgslider img{
+    height: 150px;
+    width: 150px;
+}
+.mycard-imgslider img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+.mycard-div1-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 95%;
+    margin-left: 8px;
+}
+/* .slick-slide > div{
+
+} */
+.home-div3{
+    height: 330px;
+    width: 100%;
+    margin-top: 10px;
+}
+.div3-header{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: white;
+}
+.home-div4{
+    height: 580px;
+    width: 100%;
+    margin-top: 10px;
+}
+.div4-header{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+.home-div5{
+    height: 500px;
+    width: 100%;
+    margin-top: 10px;
+}
+.div5-header{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    color: white;
+}
+.button-slider{
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    font-family: cursive;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+}
+.home-div6{
+    height: 150px;
+    width: 90%;
+    background-color: lightblue;
+    margin-left: 4%;
+    /* border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 40px;
+
+}
+.home-div6 h2{
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 10px;
+}
+.home-div6 .stay{
+    height: 25px;
+    width: 130px;
+    background-color: white;
+    position: relative;
+    bottom: 80px;
+    left: 1180px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    padding-top: 5px;
+    font-family: cursive;
+    border-radius: 5px;
+}
+.home-div7{
+    height: 250px;
+    width: 100%;
+}
+.div7-parent1{
+    height:170px;
+    width: 91%;
+    margin-left: 4.5%;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.div7-parent1 div{
+    height: 170px;
+    width: 100%;
+    background-color: tan;
+    border-radius: 5px;
+    text-align: center;
+    /* padding-top: 50px; */
+}
+.div7-parent1 div h2{
+    margin-top: 60px;
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.home-div7 .div7-header{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+    padding-bottom: 20px;
+    text-align: center;
+}

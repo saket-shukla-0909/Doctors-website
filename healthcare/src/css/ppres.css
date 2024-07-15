@@ -1,0 +1,59 @@
+.pat-pres-maindiv{
+    height: 88vh;
+    width: 100%;
+    background-image: url('https://i.pinimg.com/736x/fd/47/9c/fd479ca35d96a58176f90a0a0f2c9565.jpg');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pat-pres-parent{
+    height: 80vh;
+    width: 400px;
+    margin-left: 35%;
+    /* border: 2px solid darkblue; */
+}
+.pat-pres-child1{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+.pat-pres-child1 .header{
+ 
+}
+.pat-pres-child1 .header p{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+.col-box-child2{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    height: 50px;
+    margin-top: 10px;
+}
+.col-box-child2 div{
+    height: 30px;
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.col-box-child3{
+    height: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 15px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+}
+.col-box-child3 h2{
+    font-family:'Times New Roman', Times, serif;
+}
