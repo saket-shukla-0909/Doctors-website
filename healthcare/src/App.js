@@ -23,6 +23,7 @@ import './css/patientregistC.css';
 import './css/dashboard.css';
 import './css/patientprofile.css'
 import './css/ppres.css';
+import './css/contact.css';
 
 
 function App() {
