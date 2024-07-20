@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import axios from "axios";
 import { MdDashboard } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
@@ -11,7 +10,6 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { PiListDashesBold } from "react-icons/pi";
 import { MdOutlineMail } from "react-icons/md";
 import { FaBell } from "react-icons/fa6";
-import { CgProfile } from "react-icons/cg";
 import { FaUserEdit } from "react-icons/fa";
 import { FaHospitalUser } from "react-icons/fa6";
 import { IoIosClock } from "react-icons/io";
@@ -27,13 +25,12 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md";
 const Dashboard=()=>{
     const navigate = useNavigate('');
     const doctorId = localStorage.getItem('doctorId');
-    const patientId = localStorage.getItem('patientId')
     const[doctorName, getDoctorName] = useState('');
     const[doctorSpeciality, getDoctorSpeciality] = useState('');
     const[degree, getDegree] = useState('');
-    const[firstname, getFirstname] = useState('');
-    const[lastname, getLastname] = useState('');
-    const[about, getAbout] = useState('');
+ 
+
+
     const getDoctor=()=>{
         axios.get('http://localhost:8080/doctors/singledoctorlist/'+doctorId).then((response)=>{
             getDoctorName(response.data.message.doctorName);
@@ -41,20 +38,13 @@ const Dashboard=()=>{
             getDegree(response.data.message.degree);
         })
     }
-    const getPatient=()=>{
-        axios.get('http://localhost:8080.patientregists/singlepatientregist/'+patientId).then((response)=>{
-            getFirstname(response.data.message.firstname);
-            getLastname(response.data.message.lastname);
-            getAbout(response.data.message.about);
-        })
-    }
+
     useEffect(()=>{
         getDoctor();
-        getPatient();
     }, [])
     const logoutHandler=()=>{
-        navigate('/')
         localStorage.clear();
+        navigate('/')
     }
     return(
         <>
@@ -72,7 +62,6 @@ const Dashboard=()=>{
                     <div className="dash-profile-parent2" onClick={()=>{navigate('')}}>{<MdOutlinePayment className="icon-dash"/>} Payment</div>
                     <div className="dash-profile-parent2" onClick={()=>{navigate('/MyProfilepage')}}>{<FaUser className="icon-dash"/>}Profile</div>
                     <div className="dash-profile-parent2" onClick={()=>{navigate('')}}>{<IoMdSettings className="icon-dash"/>}Setting</div>
-                    {/* <div className="dash-profile-parent2" onClick={()=>{navigate('/MyProfilepage')}}>{<CgProfile className="icon-dash"/>}Your Profile</div> */}
                     <div className="dash-profile-parent2" onClick={logoutHandler}>{<FaArrowRightFromBracket className="icon-dash"/>}Logout</div>
                 </div>
                 <div className="doc-dash-div2">
@@ -249,4 +238,4 @@ const Dashboard=()=>{
         </>
     )
 }
-export default Dashboard;
+export default DashboardC;

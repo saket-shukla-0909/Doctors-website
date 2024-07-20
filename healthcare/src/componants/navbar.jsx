@@ -8,11 +8,11 @@ const Navbar=()=>{
 
     const navigate = useNavigate('');
     const doctorId = localStorage.getItem('doctorId')
-    const contact = localStorage.getItem('contact')
+    const patientId = localStorage.getItem('patientId')
     const doctorName = localStorage.getItem('doctorName');
     const docImage = localStorage.getItem('docImage');
-    let firstname = localStorage.getItem('firstname');
-    let lastname = localStorage.getItem('lastname');
+    let patientname = localStorage.getItem('patientName');
+
     const logoutHandler=()=>{
         localStorage.clear();
         navigate('/Loginpage');
@@ -24,14 +24,14 @@ const Navbar=()=>{
                         <img src="./img_folder/logo_img.jpg" alt="" />
                     </div>
                     <div className="parent2div-nav"> 
-                    {  (!doctorId && !contact) && <>
+                    {  (!doctorId && !patientId) && <>
                         <div onClick={()=>{navigate('/')}}>Home </div>
                         <div onClick={()=>{navigate('/Aboutpage')}}>About</div>
                         <div onClick={()=>{navigate('/Contactpage')}}>Contact</div>
                         <div onClick={()=>{navigate('/Loginpage')}}>Doctor's Login</div>
                         <div onClick={()=>{navigate('/Patientregist')}}>Patient Registration</div>
                     </>}
-                    { (doctorId && !contact) &&
+                    { (doctorId && !patientId) &&
                     <>   
                         <div><img className="docImg" src={docImage} alt="" /> </div>
                         <div>{doctorName}</div>
@@ -42,10 +42,10 @@ const Navbar=()=>{
                         <div onClick={logoutHandler}>Logout</div>
                     </>}
 
-                    { (contact) &&
+                    { (patientId) &&
                     <>
                         <div><img src="" alt="" /></div>
-                        <div>{firstname} {lastname}</div>
+                        <div>{patientname}</div>
                         <div onClick={()=>{navigate('/MyProfilespage')}}>My Profile</div>
                         <div onClick={()=>{navigate('/Pdashboard')}}>Dashboard</div>
                         <div onClick={()=>{navigate('/Pprescriptionpage')}}>Prescription</div>

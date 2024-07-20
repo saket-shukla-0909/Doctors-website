@@ -44,8 +44,11 @@
     font-size: 16px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.col-box-child2 .gender{
+    margin-left: 25%;
+}
 .col-box-child3{
-    height: 150px;
+    height: 100px;
     width: 80%;
     margin-left: 10%;
     margin-top: 15px;

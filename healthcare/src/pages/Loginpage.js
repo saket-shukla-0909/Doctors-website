@@ -12,9 +12,7 @@ const Login=()=>{
         <>
             {<Header/>}
             {<Navbar/>}
-            <div className="loginpage-maindiv">
             {<Registration/>}
-            </div>
             {<Footer/>}
         </>
     )

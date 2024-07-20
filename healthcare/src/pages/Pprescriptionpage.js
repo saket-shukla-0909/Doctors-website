@@ -9,27 +9,23 @@ import { useEffect, useState } from "react";
 
 
 const Pprescription=()=>{
-    let patientId = localStorage.getItem('patient_Id');
-    const[firstname, getFirstname] = useState('');
-    const[lastname, getLastname] = useState('');
-    const[email, getEmail] = useState('');
-    const[contact, getContact] = useState('');
-    const[dob, getDob] = useState('');
-    const[age, getAge] = useState('');
-    const[gender, getGender] = useState('');
-    const[address, getAddress] = useState('');
-    const[about, getAbout] = useState('')
+    let patientId = localStorage.getItem('patientId');
+    const [patientname, getPatientName] = useState('');
+    const [docname, getDocname] = useState('');
+    const [age, getAge] = useState('');
+    const [symptoms, getSymptoms] = useState('');
+    const [treatment, getTreatment] = useState('');
+    const [gender, getGender] = useState('');
+    const [date, getDate] = useState('');
     const getPatient=()=>{
-        axios.get('http://localhost:8080/patientregists/singlepatientregist/'+patientId).then((response)=>{
-            getFirstname(response.data.message.firstname);
-            getLastname(response.data.message.lastname);
-            getEmail(response.data.message.email);
-            getContact(response.data.message.contact);
-            getDob(response.data.message.dob);
+        axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
+            getPatientName(response.data.message.patientname);
             getAge(response.data.message.age);
+            getDocname(response.data.message.docname);
+            getSymptoms(response.data.message.symptoms);
+            getTreatment(response.data.message.treatment);
             getGender(response.data.message.gender);
-            getAddress(response.data.message.address);
-            getAbout(response.data.message.about);
+            getDate(response.data.message.date);
         })
     }
     useEffect(()=>{
@@ -43,38 +39,39 @@ const Pprescription=()=>{
                 <div className="pat-pres-parent">
                     <div className="pat-pres-child1">
                         <div className="header">
-                            <h2>Dr. Prachi Bhardwaj Health Clinic</h2> 
-                            <p>Punjabi Bagh, North Delhi occupation</p>
+                            <h2>{docname} Health Clinic</h2> 
+                            {/* <p>Punjabi Bagh, North Delhi occupation</p> */}
                         </div>
                     </div>
 
                     <div className="col-box-child2">
                         <div>
-                            Name: {firstname}{lastname} 
+                            Name: {patientname}
                         </div>
                         <div>
-                            Birth: {dob}
+                            Birth: 09-09-2001
                         </div>
                     </div>
                     <div className="col-box-child2">
                         <div>
+                            Gender: {gender}
+                        </div>
+                        <div>
+                            Date: {date}
+                        </div>
+                    </div>
+                    <div className="col-box-child2">
+                        <div className="gender">
                             Age: {age}
-                        </div>
-                        <div>
-                            Date: 28-10-2023
-                        </div>
-                        <div>
-                            Sex: {gender}
                         </div>
                     </div>
                     <div className="col-box-child3">
                         <h2>Symptoms</h2>
-                        <p>Cold Fever</p>
-                        <p>Neumonea</p>
-                        <p></p>
+                        <p>{symptoms}</p>
                     </div>
                     <div className="col-box-child3">
                        <h2>Treatment</h2>
+                       <p>{treatment}</p>
                     </div>
                 </div>
             </div>

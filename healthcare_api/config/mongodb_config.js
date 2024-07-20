@@ -9,7 +9,9 @@ const patientSchema ={
     date: String,
     symptoms: String,
     treatment: String,
-    gender:String
+    gender:String,
+    passwordp: String,
+    gender: String
 }
 const patient = mongoose.model("patient", patientSchema)
 module.exports = patient;

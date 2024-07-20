@@ -57,15 +57,35 @@
 }
 .pres-form-col2 .input3{
     margin-top: 10px;
-    width: 87%;
+    width: 107%;
     height: 30px;
+    padding-left: 5px;
 }
 .pres-form-col2 .input4{
-    margin-top: 20px;
-    height: 15px;
+    margin-top: 10px;
+    height: 30px;
     margin-right: 5px;
+    margin-left: 40px;
     font-size: 20px;
-    width: 10%;
+    width: 82%;
+    padding-left: 5px;
+}
+
+.pres-form-col2 .Blood{
+    margin-left: 5px;
+}
+.pres-form-col2 .inputblood{
+    margin-left: 5px;
+    height: 25px;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 5px;
+}
+.pres-form-col2 .gender{
+    margin-top: 10px;
+}
+.pres-form-col2 .female{
+    margin-left: 8px;
 }
 .pres-form-col2 span{
     font-size: 16px;
@@ -116,4 +136,29 @@
     height: 400px;
     display: flex;
     justify-content: center;
+}
+.pres-form-col5{
+    text-align: center;
+    margin-top: 10px;
+}
+.pres-form-col5 span{
+    cursor: pointer;
+}
+.pres-form-col4 .child1{
+    margin-bottom: 10px;
+}
+.pres-form-col6{
+    height: 70px;
+    width: 100%;
+    margin-top: 10px;
+}
+.pres-form-col6 label{
+    font-family: cursive;
+    padding-top: 10px;
+}
+.pres-form-col6 input{
+    width: 99%;
+    height: 35px;
+    margin-top: 10px;
+    padding-left: 5px;
 }

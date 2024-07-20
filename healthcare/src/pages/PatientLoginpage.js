@@ -1,7 +1,8 @@
 import Footer from "../componants/footer"
 import Header from "../componants/header"
 import Navbar from "../componants/navbar"
-import PatientRegistC from "../componants/PatientRegist"
+import Registration from "../componants/registration"
+
 
 
 
@@ -13,9 +14,7 @@ const PatientLoginpage=()=>{
         <>
             {<Header/>}
             {<Navbar/>}
-            <div className="PatientRegist-maindiv">
-                {<PatientRegistC/>}
-            </div>
+            {<Registration/>}
             {<Footer/>}
         </>
     )

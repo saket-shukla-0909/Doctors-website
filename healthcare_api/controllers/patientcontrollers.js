@@ -11,9 +11,14 @@ exports.singlepatientlist = async(request, response)=>{
     response.send(JSON.stringify({'status':200, 'error':'', "message":allpatients}));
 }
 
+exports.singlepatient = async(request, response)=>{
+    let allpatients = await patient.findById(request.params.id);
+    response.send(JSON.stringify({'status':200, 'error':'', "message":allpatients}));
+}
+
 exports.registration = async(request, response)=>{
-    let registrationData = {docid: request.body.docid, docname: request.body.docname, patientname: request.body.patientname, age:request.body.age, number:request.body.number, date: request.body.date, 
-        symptoms: request.body.symptoms, treatment: request.body.treatment, gender:request.body.gender
+    let registrationData = {docid: request.body.docid, docname: request.body.docname, patientname: request.body.patientname, age:request.body.age, number:request.body.number,
+        symptoms: request.body.symptoms, treatment: request.body.treatment, gender:request.body.gender, passwordp:request.body.passwordp, date:request.body.date, gender:request.body.gender
     }
     console.log(registrationData);
     const Patient = new patient(registrationData);
@@ -30,17 +35,18 @@ exports.deletepatient= async(request, response)=>{
 
 exports.updatepatient= async(request, response)=>{
     let registrationData = { patientname: request.body.patientname, age:request.body.age, number:request.body.number, date: request.body.date, 
-        symptoms: request.body.symptoms, treatment: request.body.treatment, gender: request.body.gender
+        symptoms: request.body.symptoms, treatment: request.body.treatment, gender: request.body.gender,passwordp:request.body.passwordp,
+         gender:request.body.gender
     }
     const userupdated = await patient.findByIdAndUpdate(request.params.id, registrationData);
     response.send(JSON.stringify({'status':200, 'error':'', 'messgae':userupdated}));
 }
 
 exports.login = async(request, response)=>{
-    const allpatients = await patient.findOne(({email:request.body.email}));
-    if(request.body.password == allusers.password){
+    const allpatients = await patient.findOne(({number:request.body.number}));
+    if(request.body.passwordp == allpatients.passwordp){
         response.send(JSON.stringify({'status':200, 'error':'', 'message':allpatients}));
     }else{
-        response.send(JSON.stringify({'status':200, 'error':'', 'message':'either username or password is wrong'}));
+        response.send(JSON.stringify({'status':200, 'error':'', 'message':'either number or password is wrong'}));
     }
 }
