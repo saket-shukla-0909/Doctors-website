@@ -20,12 +20,26 @@ import { SiMinetest } from "react-icons/si";
 import { IoIosAdd } from "react-icons/io";
 import { FaSuitcaseMedical } from "react-icons/fa6";
 import { BiSolidDownArrow } from "react-icons/bi";
+import Progressbar from "../componants/progressbar";
+import { useEffect, useState } from "react";
 const Pdashboard=()=>{
     const navigate = useNavigate('');
     const logoutHandler=()=>{
         localStorage.clear();
         navigate('/');
     }
+
+    const[progress, setProgress] = useState(0);
+    useEffect(()=>{
+        const time = setInterval(()=>{
+            if(progress<45){
+                setProgress((p)=> p+1)
+            }
+        }, 20);
+        return()=>{
+            clearInterval(time);
+        }
+    }, [progress])
     return(
         <>
 
@@ -107,8 +121,8 @@ const Pdashboard=()=>{
                                                 <p>6 feet</p>
                                             </div>
                                             <div className="div">
-                                                <div className="para1">Blood</div>
-                                                <div>A+</div>
+                                                <p className="para1">Blood</p>
+                                                <p>A+</p>
                                             </div>
                                         </div>
 
@@ -156,7 +170,8 @@ const Pdashboard=()=>{
                                     <div>Show: <span>This week</span>{<BiSolidDownArrow className="icon1"/>}</div>
                                 </div>
                                 <div className="child2">
-                                    <p>4 task completed out of 10</p>
+                                    <div className="div1">4 task completed out of 10</div>
+                                    <div className="div2"><Progressbar progress={progress} color={'lightgreen'}/></div>
                                 </div>
                             </div>
                             <div className="parent2">

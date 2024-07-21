@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Progressbar from "../componants/progressbar";
 import { MdDashboard } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
@@ -29,7 +30,6 @@ const Dashboard=()=>{
     const[doctorName, getDoctorName] = useState('');
     const[doctorSpeciality, getDoctorSpeciality] = useState('');
     const[degree, getDegree] = useState('');
- 
 
 
     const getDoctor=()=>{
@@ -47,6 +47,29 @@ const Dashboard=()=>{
         navigate('/')
         localStorage.clear();
     }
+    const[progress1, setProgress1] = useState(0);
+    const[progress2, setProgress2] = useState(0);
+    const[progress3, setProgress3] = useState(0);
+    const[progress4, setProgress4] = useState(0);
+    useEffect(()=>{
+        const time = setInterval(()=>{
+            if(progress1<85){
+                setProgress1((p)=> p+1)
+            }
+            if(progress2<70){
+                setProgress2((p)=> p+1)
+            }
+            if(progress3<60){
+                setProgress3((p)=> p+1)
+            }
+            if(progress4<45){
+                setProgress4((p)=> p+1)
+            }
+        }, 20);
+        return()=>{
+            clearInterval(time);
+        }
+    }, [progress1, progress2, progress3, progress4])
     return(
         <>
             <div className="doc-dash-maindiv">
@@ -199,10 +222,22 @@ const Dashboard=()=>{
                     <div className="dash-div2-parent4">
                         <div className="box1">
                             <h3>Patients Review</h3>
-                            <div>Excellent</div>
-                            <div>Great</div>
-                            <div>Good</div>
-                            <div>Average</div>
+                            <div className="div1">
+                                <div>Excellent</div>
+                                <div><Progressbar progress={progress1} color={'blue'}/></div>
+                            </div>
+                            <div className="div1">
+                                <div>Great</div>
+                                <div><Progressbar progress={progress2} color={'green'}/></div>
+                            </div>
+                            <div className="div1">
+                                <div>Good</div>
+                                <div><Progressbar progress={progress3} color={'red'}/></div>
+                            </div>
+                            <div className="div1">
+                                <div>Average</div>
+                                <div><Progressbar progress={progress4} color={'lightblue'}/></div>
+                            </div>
                         </div>
                         <div className="box2">
                             <h3>Appointment Request</h3>

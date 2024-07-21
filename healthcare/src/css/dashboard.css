@@ -172,10 +172,20 @@
     color: darkblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.dash-div2-parent4 .box1 div{
-    margin-top: 10px;
-    margin-left: 15px;
+.dash-div2-parent4 .box1 .div1{
+    width: 100%;
+    height: 35px;
+    margin-top: 10px; 
     font-family:cursive;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.dash-div2-parent4 .box1 .div1 div{
+   height: 20px;
+   width: 100%;
+   text-align: center;
 }
 .dash-div2-parent4 .box2 h3{
     margin-top: 15px;
