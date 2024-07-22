@@ -7,7 +7,8 @@ import axios from 'axios';
 
 const Registration=()=>{
     const doctorId = localStorage.getItem('doctorId');
-
+    const params = useParams('');
+    const navigate = useNavigate('');
     const doctorName = localStorage.getItem('doctorName');
     const address =  localStorage.getItem('address');
     const doctornumber = localStorage.getItem('doctorNumber')
@@ -28,24 +29,29 @@ const Registration=()=>{
     const [gender, getGender] = useState('');
     const [passwordp, getPasswordp] = useState('');
     const [date, getDate] = useState('');
-    const params = useParams('');
-    const navigate = useNavigate('');
 
+    const [birth, getBirth] = useState('');
+    const [blood, getBlood] = useState('');
+    const [height, getHeight] = useState('');
+    const [width, getWidth] = useState('');
+    const [emailp , getEmailp] = useState('');
+    const [addressp, getAddressp] = useState('');
+    const [aboutp, getAboutp] = useState('');
     
     useEffect(()=>{
         if(Location.pathname == '/Loginpage'){
             getButtonName('Login');
             getFormName('Login Form');
-            getFormError('')
+
         }
         if(Location.pathname == '/PatientLoginpage'){
             getButtonName('Patient Login');
             getFormName('Patient Login Form');
-            getFormError('');
         }
-        if(params.id){
+        if(Location.pathname == '/updatepatientpage'){
             getFormName('Update Patient Form');
             getButtonName('Update Patient');
+            if(params.id){
             axios.get('http://localhost:8080/patients/singlepatientlist/'+params.id).then((response)=>{
                 getPatientName(response.data.message.patientname);
                 getAge(response.data.message.age);
@@ -53,9 +59,16 @@ const Registration=()=>{
                 getGender(response.data.message.gender);
                 getSymptoms(response.data.message.symptoms);
                 getTreatment(response.data.message.treatment);
-                getEmail(response.data.message.email);
-                getPassword(response.data.message.password);
+                getDate(response.data.message.date);
+                getBirth(response.data.message.birth);
+                getBlood(response.data.message.blood);
+                getHeight(response.data.message.height);
+                getWidth(response.data.message.width);
+                getEmailp(response.data.message.emailp);
+                getAddressp(response.data.message.addressp);
+                getAboutp(response.data.message.aboutp);
             })
+        }
         }
     },[])
     const patientnameHandler=(event)=>{
@@ -91,12 +104,34 @@ const Registration=()=>{
     const dateHandler=(event)=>{
         getDate(event.target.value);
     }
+    const birthHandler=(event)=>{
+        getBirth(event.target.value)
+    }
+    const bloodHandler=(event)=>{
+        getBlood(event.target.value);
+    }
+    const heightHandler=(event)=>{
+        getHeight(event.target.value);
+    }
+    const widthHandler=(event)=>{
+        getWidth(event.target.value);
+    }
+    const emailpHandler=(event)=>{
+        getEmailp(event.target.value);
+    }
+    const addresspHandler=(event)=>{
+        getAddressp(event.target.value);
+    }
+    const aboutpHandler=(event)=>{
+        getAboutp(event.target.value);
+    }
+
     
     const submitHandler=(e)=>{
         e.preventDefault()
         console.log(patientname, age, number, symptoms, treatment, email, password);
         if(params.id){
-            const registrationData = {patientname:patientname, age:age, number:number, gender:gender, symptoms:symptoms, treatment:treatment, passwordp:passwordp, date:date }
+            const registrationData = {patientname:patientname, age:age, number:number, gender:gender, symptoms:symptoms, treatment:treatment, passwordp:passwordp, date:date,birth:birth, blood:blood, height:height, width:width, emailp:emailp, addressp:addressp, aboutp:aboutp }
             axios.put('http://locahost:8080/patients/updatepatient/'+params.id, registrationData).then((response)=>{
                 console.log(response);
                 navigate('/patientlist');
@@ -134,11 +169,15 @@ const Registration=()=>{
                     navigate('/MyProfilespage')
                 }
             })}else{
-            const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender, date:date, symptoms:symptoms, treatment:treatment }
+            const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender, date:date, symptoms:symptoms, treatment:treatment,birth:birth, blood:blood, height:height, width:width, emailp:emailp, addressp:addressp, aboutp:aboutp}
             console.log(registrationData);
             axios.post('http://localhost:8080/patients/registration', registrationData).then((response)=>{
                 console.log(response.data.message);
-                navigate('/patientlistpage')
+                if(buttonname == 'Submit Form'){
+                    navigate('/patientlistpage')
+                }else{
+                    navigate('/MyProfilespage')
+                }
             })
         }
     }
@@ -157,7 +196,9 @@ const Registration=()=>{
                         {formError}
                     </div>
                     <form action="">
-                    { (buttonname == 'Submit Form' || buttonname=='Update Patient') && 
+                    <div className="display-flex">    
+                    <div>
+                    { (buttonname == 'Submit Form' || buttonname == 'Update Patient') && 
                     <>
                         <div className="pres-form-col1">
                             <div>
@@ -170,7 +211,7 @@ const Registration=()=>{
                             </div>
                         </div>
                     </>}
-                    { (buttonname == 'Submit Form' || buttonname=='Update Patient' || buttonname=='Patient Login') && 
+                    { (buttonname == 'Submit Form' || buttonname=='Patient Login') && 
                     <>
                             <div className="pres-form-col6">
                                 <label htmlFor="">Number:</label> 
@@ -181,7 +222,7 @@ const Registration=()=>{
                                 <input type="password"  className="input4" value={passwordp} placeholder="password" onChange={passwordpHandler}/>
                             </div>
                     </>}
-                    { (buttonname == 'Submit Form' || buttonname=='Update Patient') && 
+                    { (buttonname == 'Submit Form' || buttonname == 'Update Patient')  && 
                     <>
                         <div className="pres-form-col2">
                             <div>
@@ -206,7 +247,47 @@ const Registration=()=>{
                             <textarea name="" id="" rows="4" value={treatment} onChange={treatmentHandler}></textarea>
                         </div>
                     </>}
+                    </div>
+                    <div>
+                    {buttonname == 'Update Patient' && 
+                    <>
+                        <div className="update-col-box">
+                             <div className="date">
+                                     <label htmlFor="">Date-Of-Birth</label>
+                                     <input type="date" value={birth} onChange={birthHandler}/>
+                             </div>
+                             <div className="blood">
+                                     <label htmlFor="">Blood Group</label>
+                                     <input type="text" placeholder="blood group" value={blood} onChange={bloodHandler}/>
+                             </div>
+                         </div>
+                         <div className="update-col-box">
+                             <div className="date">
+                                     <label htmlFor="">Height</label>
+                                     <input type="text" placeholder="height" value={height} onChange={heightHandler}/>
+                             </div>
+                             <div className="blood">
+                                     <label htmlFor="">Width</label>
+                                     <input type="text" placeholder="width" value={width} onChange={widthHandler}/>
+                             </div>
+                         </div>
+                         <div className="update-row-box">
+                                 <label htmlFor="">Gmail</label>
+                                 <input type="text" placeholder="example@gmail.com" value={emailp} onChange={emailpHandler}/>
+                         </div>
+                         <div className="update-row-box">   
+                                 <label htmlFor="">Address</label>
+                                 <textarea type="text" placeholder="address" rows={5} col={12} value={addressp}  onChange={addresspHandler}></textarea>
+                         </div>
+                         <div className="update-row-box">   
+                                 <label htmlFor="">About</label>
+                                 <textarea type="text" placeholder="value" rows={5} col={12} value={aboutp} onChange={aboutpHandler}></textarea>
+                         </div>
 
+                    </>}
+                    </div>
+                    </div>
+                   
                     { buttonname == 'Login' &&
                     <>
                         <div className="pres-form-col4">

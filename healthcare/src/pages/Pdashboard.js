@@ -20,8 +20,11 @@ import { SiMinetest } from "react-icons/si";
 import { IoIosAdd } from "react-icons/io";
 import { FaSuitcaseMedical } from "react-icons/fa6";
 import { BiSolidDownArrow } from "react-icons/bi";
+import { HiUserPlus } from "react-icons/hi2";
 import Progressbar from "../componants/progressbar";
 import { useEffect, useState } from "react";
+import axios from "axios";
+
 const Pdashboard=()=>{
     const navigate = useNavigate('');
     const logoutHandler=()=>{
@@ -40,6 +43,27 @@ const Pdashboard=()=>{
             clearInterval(time);
         }
     }, [progress])
+    let patientId = localStorage.getItem('patientId');
+    console.log(patientId);
+
+    const[patientname, getPatientName] = useState('');
+    
+    const[age, getAge] = useState('');
+    const[gender, getGender] = useState('');
+    const[number, getNumber] = useState('');
+
+
+    const getPatient=()=>{
+        axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
+            getPatientName(response.data.message.patientname);
+            
+        })
+    }
+
+
+    useEffect(()=>{
+        getPatient();
+    })
     return(
         <>
 
@@ -50,12 +74,14 @@ const Pdashboard=()=>{
                     <div className="img">
                             <img src="" alt=""/>
                     </div>
-                    <div className="pdash-div1-child1">Gaurav Pandey</div>
+                    <div className="pdash-div1-child1">{patientname}</div>
                     <div>
                         <div className="pdash-child2" onClick={()=>{navigate('')}}>{<MdDashboard className="icon-dash"/>} Dashboard</div>
                         <div className="pdash-child2" onClick={()=>{navigate('')}}>{<SlCalender className="icon-dash"/>} Appointment</div>
                         <div className="pdash-child2" onClick={()=>{navigate('')}}>{<MdOutlinePayment className="icon-dash"/>} Payment</div>
-                        <div className="pdash-child2" onClick={()=>{navigate('/MyProfilepage')}}>{<FaUser className="icon-dash"/>} Profile</div>
+                        {/* <div className="pdash-child2" onClick={()=>{navigate('/updatepatientpage')}}>{<MdOutlinePayment className="icon-dash"/>} Update</div> */}
+                        <div className="pdash-child2" onClick={()=>{navigate('/MyProfilespage')}}>{<FaUser className="icon-dash"/>} Profile</div>
+                        <div className="pdash-child2" onClick={()=>{navigate('/updatepatientpage')}}>{<HiUserPlus className="icon-dash"/>}Update</div>
                         <div className="pdash-child2" onClick={()=>{navigate('')}}>{<IoMdSettings className="icon-dash"/>} Setting</div>
                         <div className="pdash-child2" onClick={logoutHandler}>{<FaArrowRightFromBracket className="icon-dash"/>} Logout</div>
                     </div>
@@ -76,7 +102,7 @@ const Pdashboard=()=>{
                         <div className="left">
                             <div className="parent1">
                                 <div className="child1">
-                                    <h1>Hello, Gaurav Pandey!</h1>
+                                    <h1>Hello, {patientname}!</h1>
                                     <p>Have are you feeling today?</p>
                                 </div>
                                 <div className="child2">

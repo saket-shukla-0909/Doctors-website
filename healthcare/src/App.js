@@ -13,6 +13,7 @@ import Pdashboard from './pages/Pdashboard';
 import Pprescription from './pages/Pprescriptionpage';
 import Patientlistpage from './pages/Patientlistpage';
 import Dashboard from './pages/Dashboardpage';
+import Updatepatient from './pages/updatepatientpage';
 
 import './css/pdash.css';
 import './css/prescription.css';
@@ -26,6 +27,7 @@ import './css/patientprofile.css'
 import './css/ppres.css';
 import './css/contact.css';
 import './css/pdashboard.css';
+import './css/registrationpupdate.css';
 
 
 function App() {
@@ -53,6 +55,7 @@ function App() {
               <Route path='/MyProfilespage' element={<MyProfile/>}/>
               <Route path='/Pdashboard' element={<Pdashboard/>}/>
               <Route path='/Pprescriptionpage' element={<Pprescription/>}/>
+              <Route path='/updatepatientpage' element={<Updatepatient/>}/>
           </Routes>
       </BrowserRouter>
     </>

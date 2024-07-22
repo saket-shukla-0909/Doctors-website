@@ -18,7 +18,10 @@ const MyProfile=()=>{
     const[age, getAge] = useState('');
     const[gender, getGender] = useState('');
     const[number, getNumber] = useState('');
-
+    const[emailp, getEmailp] = useState('');
+    const[addressp ,getAddressp] = useState('');
+    const[aboutp, getAboutp] = useState('');
+    const[birth, getBirth] = useState('');
 
     const getPatient=()=>{
         axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
@@ -26,10 +29,15 @@ const MyProfile=()=>{
             getAge(response.data.message.age);
             getGender(response.data.message.gender);
             getNumber(response.data.message.number);
-            
+            getEmailp(response.data.message.emailp);
+            getAddressp(response.data.message.addressp);
+            getAboutp(response.data.message.aboutp);
+            getBirth(response.data.message.birth);
         })
     }
-
+    console.log(aboutp);
+    console.log(birth);
+    
 
     useEffect(()=>{
         getPatient();
@@ -51,19 +59,19 @@ const MyProfile=()=>{
                         <div className="pat-prof-parent2-child1">
                             <h2>PROFILE</h2>
                             <h1>{patientname}</h1>
-                            <p></p>
+                            <p>{aboutp}</p>
                         </div>
                         <div className="pat-prof-parent2-child3">
                             <h3>DETAILS</h3>
-                            <div>Date-of-Birth: </div>
+                            <div>Date-of-Birth: {birth}</div>
                             <div>Age: {age}</div>
                             <div>Gender: {gender}</div>
                         </div>
                         <div className="pat-prof-parent2-child2">
                             <h3>CONTACT</h3>
                             <div>{<MdAddCall className="con-icon"/>}{number} </div>
-                            <div>{<TfiEmail className="email-icon"/>} </div>
-                            <div>{<FaLocationDot className="con-add"/>} </div>
+                            <div>{<TfiEmail className="email-icon"/>}{emailp} </div>
+                            <div>{<FaLocationDot className="con-add"/>}{addressp} </div>
                         </div>
                     </div>
                 </div>
