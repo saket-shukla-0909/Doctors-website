@@ -13,6 +13,7 @@ app.use('/appointments', require('./routes/appointroutes'));
 app.use('/patientregists', require('./routes/patientregistroutes'));
 
 
+
 app.listen(port,(error)=>{
     if(error){
         console.log(error);

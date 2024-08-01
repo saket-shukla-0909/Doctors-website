@@ -31,7 +31,7 @@ const PatientRegistC=()=>{
         if(params.id){
             getPregistrationform(`Update Form`);
             getButtonName(`Update Form`);
-            axios.get('http://localhost:8080/patientregists/singlepatientregist/' +params.id).then((response)=>{
+            axios.get('/' +params.id).then((response)=>{
                 getFirstname(response.data.message.firstname);
                 getLastname(response.data.message.lastname);
                 getEmail(response.data.message.email);
@@ -79,14 +79,14 @@ const PatientRegistC=()=>{
         e.preventDefault();
         if(params.id){
             const registrationData = {firstname:firstname, lastname:lastname,dob:dob, email:email, password:password, gender:gender, about:about, age:age, contact:contact, address:address}
-            axios.put('http://localhost:8080/patientregists/updatepatientregist/'+params.id, registrationData).then((response)=>{
+            axios.put(''+params.id, registrationData).then((response)=>{
                 console.log(response)
                 getFormError(`Patient has successfully Updated`)
             })
         }else if(buttonname=='Login'){
             let registrationData ={email:email, password:password}
             console.log(registrationData);
-            axios.post('http://localhost:8080/patientregists/loginpatientregist',registrationData).then((response)=>{
+            axios.post('',registrationData).then((response)=>{
                 if(response.data.message=='either username or password is wrong'){
                     getFormError(response.data.message)
                 }else{
@@ -101,7 +101,7 @@ const PatientRegistC=()=>{
             })
         }else{
         const registrationData = {firstname:firstname, lastname:lastname, dob:dob, email:email, password:password,about:about, gender:gender, age:age, contact:contact, address:address}
-        axios.post('http://localhost:8080/patientregists/patientregistregistration', registrationData).then((response)=>{
+        axios.post('', registrationData).then((response)=>{
             getFormError(`Patient prescription has successfully created`);
         })
     }

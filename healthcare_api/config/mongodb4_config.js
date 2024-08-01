@@ -1,16 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/doctors',{});
 const patientregistSchema ={
-    firstname: String,
-    lastname: String, 
-    email: String,
-    password: String,
-    gender: String,
-    age: String,
-    contact: String,
-    address: String,
-    dob: String,
-    about: String,
+    birth: String,
+    blood: String,
+    height: String,
+    width: String,
+    patientid: String,
+    addressp: String,
+    aboutp: String
 }
 const patientregist = mongoose.model('patientregist', patientregistSchema)
 module.exports = patientregist;

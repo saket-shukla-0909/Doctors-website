@@ -9,12 +9,10 @@
     align-items: center;
 }
 .presmain-div1 .div1-parent1{
-    max-width: 800px;
+    max-width: 400px;
     background-color: white;
-    padding: 20px 0px;
-    padding-left: 40px;
+    padding: 30px;
     border-radius: 8px;
-    margin: 10px 0px;
 }
 .presmain-div1 .div1-parent1 .div1-header{
     margin-top: 10px;
@@ -93,7 +91,7 @@
     margin-right: 5px;
 }
 .presmain-div1 .pres-form-col3{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .presmain-div1 .pres-form-col3 label{
     margin-top: 10px;
@@ -121,15 +119,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .presmain-div1 button{
     height:35px;
     margin-top: 15px;
-    width: 150px;
+    width: 50%;
     background-color: lightblue;
     border-radius: 10px;
     font-size: 18px;
     font-family: cursive;
+    cursor: pointer;
 }
 .loginpage-maindiv{
     background-color: black;
@@ -154,6 +154,7 @@
     margin-top: 10px;
 }
 .pres-form-col6 label{
+    /* margin-bottom: 10px; */
     font-family: cursive;
     padding-top: 10px;
 }

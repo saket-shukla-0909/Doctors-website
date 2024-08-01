@@ -6,22 +6,23 @@ import { MdAddCall } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 
 const MyProfile=()=>{
+    // const params = useParams('');
     let patientId = localStorage.getItem('patientId');
     console.log(patientId);
 
     const[patientname, getPatientName] = useState('');
-    
     const[age, getAge] = useState('');
     const[gender, getGender] = useState('');
     const[number, getNumber] = useState('');
-    const[emailp, getEmailp] = useState('');
     const[addressp ,getAddressp] = useState('');
     const[aboutp, getAboutp] = useState('');
     const[birth, getBirth] = useState('');
+    const[emailp, getEmailp] = useState('')
 
     const getPatient=()=>{
         axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
@@ -29,19 +30,23 @@ const MyProfile=()=>{
             getAge(response.data.message.age);
             getGender(response.data.message.gender);
             getNumber(response.data.message.number);
-            getEmailp(response.data.message.emailp);
+            
+        })
+    }
+    
+    const getPatientdata=()=>{
+        axios.get('http://localhost:8080/patientregists/singlepatientregist/'+ patientId).then((response)=>{
             getAddressp(response.data.message.addressp);
             getAboutp(response.data.message.aboutp);
             getBirth(response.data.message.birth);
+            getEmailp(response.data.message.emailp);
+   
         })
     }
-    console.log(aboutp);
-    console.log(birth);
-    
 
-    useEffect(()=>{
         getPatient();
-    })
+        getPatientdata();
+  
     return(
         <>
             {<Header/>}
@@ -67,12 +72,15 @@ const MyProfile=()=>{
                             <div>Age: {age}</div>
                             <div>Gender: {gender}</div>
                         </div>
+                        
                         <div className="pat-prof-parent2-child2">
                             <h3>CONTACT</h3>
-                            <div>{<MdAddCall className="con-icon"/>}{number} </div>
+                            <div>{<MdAddCall className="con-icon"/>} {number}</div>
                             <div>{<TfiEmail className="email-icon"/>}{emailp} </div>
-                            <div>{<FaLocationDot className="con-add"/>}{addressp} </div>
+                            <div>{<FaLocationDot className="con-add"/>} {addressp} </div>
+
                         </div>
+                     
                     </div>
                 </div>
             </div>

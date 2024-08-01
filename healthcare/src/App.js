@@ -6,7 +6,7 @@ import Contact from './pages/Contactpage';
 import Prescription from './pages/Prescriptionpage';
 import Login from './pages/Loginpage';
 import MyProfilepage from './pages/MyProfilepage';
-import PatientRegist from './pages/Patientregist';
+import DoctorRegist from './pages/Doctorregist';
 import PatientLoginpage from './pages/PatientLoginpage';
 import MyProfile from './pages/MyProfilespage';
 import Pdashboard from './pages/Pdashboard';
@@ -30,6 +30,7 @@ import './css/pdashboard.css';
 import './css/registrationpupdate.css';
 
 
+
 function App() {
   return (
     <>
@@ -43,7 +44,7 @@ function App() {
               <Route path="/Loginpage" element={<Login/>} />
 
               {/* for only doctors navbar only after login */}
-              <Route path="/Patientregist" element={<PatientRegist/>} />
+              <Route path="/Doctorregist" element={<DoctorRegist/>} />
               <Route path="/MyProfilepage" element={<MyProfilepage/>}/>
               <Route path="/Prescriptionpage" element={<Prescription/>} />
               <Route path="/edit/:id" element={<Prescription/>} />

@@ -1,24 +1,48 @@
-.display-flex{
+/* .display-flex{
     display: flex;
     gap: 50px;
-}
-.upd-pat-maindiv{
-    height: 87.9vh;
-    width: 100%;
-}
-.upd-pat-div{
-    height: 38px;
-    width: 100%;
+} */
+.header-update{
+    height: 53px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
     display: flex;
     justify-content: center;
-    /* background-color: black; */
     align-items: center;
     gap: 250px;
-    /* border-top: 1px solid lightblue; */
+    font-family: cursive;
+    cursor: pointer;
+}
+.upd-pat-maindiv{
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.upd-pat-div{
+    max-width: 400px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+.upd-pat-div .header{
+    height: 32px;
+    width: 80%;
+    font-size: 26px;
+    text-align: center;
+    margin-left: 10%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.upd-pat-div div .error{
+    text-align: center;
+    margin-top: 8px;
 }
 .upd-pat-div div{
-    /* color: white; */
-    cursor: pointer;
     font-family: cursive;
     font-size: 18px;
 }
@@ -80,20 +104,20 @@
 }
 .updatemebtn{
     height: 35px;
-    width: 30%;
-    margin-left: 35%;
+    width: 40%;
+    margin-left: 30%;
     margin-top: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
-.updatemebtn input{
+.updatemebtn button{
     height: 35px;
     width: 100%;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: cursive;
     cursor: pointer;
-    
+    background-color: lightblue;
 }
 .jump-dash-board{
     height: 30px;

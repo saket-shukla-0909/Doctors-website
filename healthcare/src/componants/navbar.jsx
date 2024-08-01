@@ -29,7 +29,7 @@ const Navbar=()=>{
                         <div onClick={()=>{navigate('/Aboutpage')}}>About</div>
                         <div onClick={()=>{navigate('/Contactpage')}}>Contact</div>
                         <div onClick={()=>{navigate('/Loginpage')}}>Doctor's Login</div>
-                        <div onClick={()=>{navigate('/Patientregist')}}>Patient Registration</div>
+                        <div onClick={()=>{navigate('/Doctorregist')}}>Doctor Registration</div>
                     </>}
                     { (doctorId && !patientId) &&
                     <>   

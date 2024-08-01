@@ -9,11 +9,11 @@ const Registration=()=>{
     const doctorId = localStorage.getItem('doctorId');
     const params = useParams('');
     const navigate = useNavigate('');
-    const doctorName = localStorage.getItem('doctorName');
-    const address =  localStorage.getItem('address');
+    const doctorname = localStorage.getItem('doctorName');
+    // const address =  localStorage.getItem('address');
     const doctornumber = localStorage.getItem('doctorNumber')
     const [buttonname, getButtonName] = useState('Submit Form');
-    const [formName, getFormName] = useState(`${doctorName} Health Clinic`)
+    const [formName, getFormName] = useState(`${doctorname} Health Clinic`)
     const [formError, getFormError] = useState('');
     const [patientname, getPatientName] = useState('');
     const [age, getAge] = useState('');
@@ -30,13 +30,6 @@ const Registration=()=>{
     const [passwordp, getPasswordp] = useState('');
     const [date, getDate] = useState('');
 
-    const [birth, getBirth] = useState('');
-    const [blood, getBlood] = useState('');
-    const [height, getHeight] = useState('');
-    const [width, getWidth] = useState('');
-    const [emailp , getEmailp] = useState('');
-    const [addressp, getAddressp] = useState('');
-    const [aboutp, getAboutp] = useState('');
     
     useEffect(()=>{
         if(Location.pathname == '/Loginpage'){
@@ -48,11 +41,11 @@ const Registration=()=>{
             getButtonName('Patient Login');
             getFormName('Patient Login Form');
         }
-        if(Location.pathname == '/updatepatientpage'){
-            getFormName('Update Patient Form');
-            getButtonName('Update Patient');
             if(params.id){
-            axios.get('http://localhost:8080/patients/singlepatientlist/'+params.id).then((response)=>{
+                getFormName('Update Patient Form');
+                getButtonName('Update Patient');
+
+                axios.get('http://localhost:8080/patients/singlepatientlist/'+params.id).then((response)=>{
                 getPatientName(response.data.message.patientname);
                 getAge(response.data.message.age);
                 getNumber(response.data.message.number);
@@ -60,16 +53,12 @@ const Registration=()=>{
                 getSymptoms(response.data.message.symptoms);
                 getTreatment(response.data.message.treatment);
                 getDate(response.data.message.date);
-                getBirth(response.data.message.birth);
-                getBlood(response.data.message.blood);
-                getHeight(response.data.message.height);
-                getWidth(response.data.message.width);
-                getEmailp(response.data.message.emailp);
-                getAddressp(response.data.message.addressp);
-                getAboutp(response.data.message.aboutp);
             })
         }
-        }
+        if(Location.pathname == '/Doctorregist'){
+            getButtonName('Doctors Registration')
+            getFormName(`Doctor's Registration Form `)
+        }
     },[])
     const patientnameHandler=(event)=>{
         getPatientName(event.target.value);
@@ -104,34 +93,57 @@ const Registration=()=>{
     const dateHandler=(event)=>{
         getDate(event.target.value);
     }
-    const birthHandler=(event)=>{
-        getBirth(event.target.value)
+
+    // Doctor's Variable
+    const [doctorName, getDoctorName] = useState('');
+    const doctornameHandler=(event)=>{
+        getDoctorName(event.target.value);
     }
-    const bloodHandler=(event)=>{
-        getBlood(event.target.value);
+    const [doctorSpeciality, getDoctorSpeciality] = useState('');
+    const specialityHandler=(event)=>{
+        getDoctorSpeciality(event.target.value);
     }
-    const heightHandler=(event)=>{
-        getHeight(event.target.value);
+    const [doctorNumber, getDoctorNumber] = useState('');
+    const doctornumberHandler=(event)=>{
+        getDoctorNumber(event.target.value);
     }
-    const widthHandler=(event)=>{
-        getWidth(event.target.value);
+    const[experience, getExperience] = useState('');
+    const experienceHandler = (event) =>{
+        getExperience(event.target.value);
     }
-    const emailpHandler=(event)=>{
-        getEmailp(event.target.value);
+
+    const [language, getLanguage] = useState('');
+    const languageHandler=(event)=>{
+        getLanguage(event.target.value);
     }
-    const addresspHandler=(event)=>{
-        getAddressp(event.target.value);
+
+    const [typesof, getTypesOf] = useState('');
+    const typesofHandler=(event)=>{
+        getTypesOf(event.target.value);
     }
-    const aboutpHandler=(event)=>{
-        getAboutp(event.target.value);
+
+    const [address, getAddress] = useState('');
+    const addressHandler=(event)=>{
+        getAddress(event.target.value)
     }
+
+    const [biography, getBiography] = useState('');
+    const biographyHandler=(event)=>{
+        getBiography(event.target.value);
+    }
+
+    const [degree, getDegree] = useState('');
+    const degreeHandler=(event)=>{
+        getDegree(event.target.value);
+    }
+    
 
     
     const submitHandler=(e)=>{
         e.preventDefault()
         console.log(patientname, age, number, symptoms, treatment, email, password);
         if(params.id){
-            const registrationData = {patientname:patientname, age:age, number:number, gender:gender, symptoms:symptoms, treatment:treatment, passwordp:passwordp, date:date,birth:birth, blood:blood, height:height, width:width, emailp:emailp, addressp:addressp, aboutp:aboutp }
+            const registrationData = {patientname:patientname, age:age, number:number, gender:gender, symptoms:symptoms, treatment:treatment, passwordp:passwordp, date:date}
             axios.put('http://locahost:8080/patients/updatepatient/'+params.id, registrationData).then((response)=>{
                 console.log(response);
                 navigate('/patientlist');
@@ -156,6 +168,12 @@ const Registration=()=>{
                     navigate('/Prescriptionpage')
                 }
             })
+        }else if(buttonname =='Doctors Registration'){
+            const registrationData = {doctorName:doctorName, doctorSpeciality:doctorSpeciality, doctorNumber:doctorNumber, email:email, password:password, experience:experience, language:language, typesof:typesof, address:address,biography: biography,degree: degree}
+            axios.post('http://localhost:8080/doctors/registration', registrationData).then((response)=>{
+                console.log(response.data.message);
+                navigate('/Loginpage')
+            })
         }else if(buttonname=='Patient Login'){
             let registrationData ={number:number, passwordp:passwordp}
             axios.post('http://localhost:8080/patients/login',registrationData).then((response)=>{
@@ -166,18 +184,15 @@ const Registration=()=>{
                     console.log(response.data.message);
                     localStorage.setItem('patientId', response.data.message._id);
                     localStorage.setItem('patientName', response.data.message.patientname);
+                    localStorage.setItem('number', response.data.message.number)
                     navigate('/MyProfilespage')
                 }
             })}else{
-            const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender, date:date, symptoms:symptoms, treatment:treatment,birth:birth, blood:blood, height:height, width:width, emailp:emailp, addressp:addressp, aboutp:aboutp}
+            const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender}
             console.log(registrationData);
             axios.post('http://localhost:8080/patients/registration', registrationData).then((response)=>{
                 console.log(response.data.message);
-                if(buttonname == 'Submit Form'){
-                    navigate('/patientlistpage')
-                }else{
-                    navigate('/MyProfilespage')
-                }
+                    navigate('/patientlistpage');
             })
         }
     }
@@ -196,9 +211,76 @@ const Registration=()=>{
                         {formError}
                     </div>
                     <form action="">
-                    <div className="display-flex">    
-                    <div>
-                    { (buttonname == 'Submit Form' || buttonname == 'Update Patient') && 
+                    {buttonname == 'Doctors Registration' && 
+                    <>
+                        <div className="pres-form-col1">
+                                <div>
+                                    <label htmlFor="">Doctor's Name:</label>
+                                    <input className="input1" type="text" placeholder="Doctor's Name" value={doctorName} onChange={doctornameHandler}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="">Doctor's Speciality:</label>
+                                    <input className="input2" type="text" placeholder="Doctor's Speciality" value={doctorSpeciality} onChange={specialityHandler}/>
+                                </div>
+                        </div>
+                    </>}
+                    { (buttonname == 'Login' || buttonname == 'Doctors Registration') &&
+                    <>
+                        <div className="pres-form-col4">
+                                <label htmlFor="">Email: </label>
+                                <input type="email" placeholder="yourname@gmail.com" value={email} onChange={emailHandler}/>
+                            </div>
+                            <div className="pres-form-col4">
+                                <label htmlFor="">Password: </label>
+                                <input type="password" placeholder="password"value={password} onChange={passwordHandler}/>
+                            </div>  
+                    </>}
+                        
+                    {  buttonname == 'Doctors Registration' &&
+                    <>
+                        <div className="pres-form-col1">
+                            <div>
+                                <label htmlFor="">Doctor's Number: </label>
+                                <input className="input1" type="text" placeholder="Doctor's Number" value={doctornumber} onChange={doctornumberHandler}/>
+                            </div>
+                            <div>
+                                <label htmlFor="">Experience:</label>
+                                <input className="input2" type="text" placeholder="Experience" value={experience} onChange={experienceHandler}/>
+                            </div>
+                        </div>
+                        
+                        <div className="pres-form-col1">
+                            <div>
+                                <label htmlFor="">Language: </label>
+                                <input className="input1" type="text" placeholder="Language" value={language} onChange={languageHandler}/>
+                            </div>
+                            <div>
+                                <label htmlFor="">Type of:</label>
+                                <input className="input2" type="text" placeholder="type of" value={typesof} onChange={typesofHandler}/>
+                            </div>
+                        </div>
+                        
+                        
+                        <div className="pres-form-col1">
+                            <div>
+                                <label htmlFor="">degree: </label>
+                                <input className="input1" type="text" placeholder="degree" value={degree} onChange={degreeHandler}/>
+                            </div>
+                            <div>
+                                <label htmlFor="">Biography:</label>
+                                <input className="input2" type="text" placeholder="Biography" value={biography} onChange={biographyHandler}/>
+                            </div>
+                        </div>
+                        
+                        <div className="pres-form-col4">
+                            <div> <label htmlFor="">Address: </label>
+                            <input className="input1" type="text" placeholder="address" value={address} onChange={addressHandler}/></div>
+                        </div>
+
+                        <div className="pres-form-col5">Switch to <span onClick={()=>{navigate('/Loginpage')}}>Doctors Login</span></div>
+                        
+                    </>}
+                    { (buttonname == 'Submit Form'|| buttonname == 'Update Patient') && 
                     <>
                         <div className="pres-form-col1">
                             <div>
@@ -247,60 +329,7 @@ const Registration=()=>{
                             <textarea name="" id="" rows="4" value={treatment} onChange={treatmentHandler}></textarea>
                         </div>
                     </>}
-                    </div>
-                    <div>
-                    {buttonname == 'Update Patient' && 
-                    <>
-                        <div className="update-col-box">
-                             <div className="date">
-                                     <label htmlFor="">Date-Of-Birth</label>
-                                     <input type="date" value={birth} onChange={birthHandler}/>
-                             </div>
-                             <div className="blood">
-                                     <label htmlFor="">Blood Group</label>
-                                     <input type="text" placeholder="blood group" value={blood} onChange={bloodHandler}/>
-                             </div>
-                         </div>
-                         <div className="update-col-box">
-                             <div className="date">
-                                     <label htmlFor="">Height</label>
-                                     <input type="text" placeholder="height" value={height} onChange={heightHandler}/>
-                             </div>
-                             <div className="blood">
-                                     <label htmlFor="">Width</label>
-                                     <input type="text" placeholder="width" value={width} onChange={widthHandler}/>
-                             </div>
-                         </div>
-                         <div className="update-row-box">
-                                 <label htmlFor="">Gmail</label>
-                                 <input type="text" placeholder="example@gmail.com" value={emailp} onChange={emailpHandler}/>
-                         </div>
-                         <div className="update-row-box">   
-                                 <label htmlFor="">Address</label>
-                                 <textarea type="text" placeholder="address" rows={5} col={12} value={addressp}  onChange={addresspHandler}></textarea>
-                         </div>
-                         <div className="update-row-box">   
-                                 <label htmlFor="">About</label>
-                                 <textarea type="text" placeholder="value" rows={5} col={12} value={aboutp} onChange={aboutpHandler}></textarea>
-                         </div>
-
-                    </>}
-                    </div>
-                    </div>
                    
-                    { buttonname == 'Login' &&
-                    <>
-                        <div className="pres-form-col4">
-                                <label htmlFor="">Email: </label>
-                                <input type="email" placeholder="yourname@gmail.com" value={email} onChange={emailHandler}/>
-                            </div>
-                            <div className="pres-form-col4">
-                                <label htmlFor="">Password: </label>
-                                <input type="password" placeholder="password"value={password} onChange={passwordHandler}/>
-                            </div>  
-
-                            <div className="pres-form-col5">Switch to <span onClick={()=>{navigate('/PatientLoginpage')}}>Patient Login</span></div>
-                    </>}
 
                     <div className="regist-button-submit">
                         <button type="submit" onClick={submitHandler}>{buttonname}</button>

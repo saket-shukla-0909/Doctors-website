@@ -6,13 +6,18 @@ exports.patientregistlist = async (request, response)=>{
 }
 
 exports.singlepatientregist= async (request,response)=>{
-    const allpatientregist = await patientregist.findById(request.params.id);
+    const allpatientregist = await patientregist.find({patientid:request.params.id});
     response.send(JSON.stringify({'status':200, 'error':'', 'message':allpatientregist}));
 }
 
 exports.patientregistregistration=(request, response)=>{
-    const registrationData = {firstname:request.body.firstname, about:request.body.about, lastname:request.body.lastname, dob:request.body.dob, email:request.body.email, password:request.body.password, gender:request.body.gender,
-         age:request.body.age, contact:request.body.contact, address:request.body.address};
+    const registrationData = {birth: request.body.birth,
+        blood: request.body.blood,
+        height: request.body.height,
+        width: request.body.width,
+        patientid: request.body.patientid,
+        addressp: request.body.addressp,
+        aboutp: request.body.aboutp};
     const Patientregist = new patientregist(registrationData);
     Patientregist.save();
     response.send('Patient registration has done successully')
@@ -25,8 +30,13 @@ exports.deletepatientregist= async(request, response)=>{
 
 }
 exports.updatepatientregist= async(request, response)=>{
-    const registrationData = {firstname:request.body.firstname, lastname:request.body.lastname,about:request.body.about, dob:request.body.dob, email:request.body.email, password:request.body.password, gender:request.body.gender,
-         age:request.body.age, contact: request.body.contact, address:request.body.address};
+    const registrationData = {birth: request.body.birth,
+        blood: request.body.blood,
+        height: request.body.height,
+        width: request.body.width,
+        patientid: request.body.patientid,
+        addressp: request.body.addressp,
+        aboutp: request.body.aboutp};
       
     const patientregistupdated = await patientregist.findByIdAndUpdate(request.params.id, registrationData);
     response.send(JSON.stringify({'status':200, 'error':'', 'message':patientregistupdated}))

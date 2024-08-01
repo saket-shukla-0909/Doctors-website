@@ -11,14 +11,7 @@ const patientSchema ={
     treatment: String,
     gender:String,
     passwordp: String,
-    gender: String,
-    birth: String,
-    blood: String,
-    height: String,
-    width: String,
-    emailp: String,
-    addressp: String,
-    aboutp: String
+
 }
 const patient = mongoose.model("patient", patientSchema)
 module.exports = patient;

@@ -1,7 +1,7 @@
 import Footer from "../componants/footer"
 import Header from "../componants/header"
 import Navbar from "../componants/navbar"
-import PatientRegistC from "../componants/PatientRegist"
+import Registration from "../componants/registration"
 
 
 
@@ -10,16 +10,16 @@ import PatientRegistC from "../componants/PatientRegist"
 
 
 
-const PatientRegist=()=>{
+const DoctorRegist=()=>{
     return(
         <>
             {<Header/>}
             {<Navbar/>}
             <div className="PatientRegist-maindiv">
-                {<PatientRegistC/>}
+                {<Registration/>}
             </div>
             {<Footer/>}
         </>
     )
 }
-export default PatientRegist
+export default DoctorRegist

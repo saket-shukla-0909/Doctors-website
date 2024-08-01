@@ -17,7 +17,6 @@ exports.registration = async(request, response)=>{
     const Doctor = new doctor(registrationData);
     Doctor.save();
     response.send(`Doctor's has successfully created`);
-    console.log(req.file)
 }
 exports.deletedoctor = async(request,response)=>{
     let doctor_id = {id: request.params.id};

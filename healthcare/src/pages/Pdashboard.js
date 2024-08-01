@@ -48,9 +48,9 @@ const Pdashboard=()=>{
 
     const[patientname, getPatientName] = useState('');
     
-    const[age, getAge] = useState('');
-    const[gender, getGender] = useState('');
-    const[number, getNumber] = useState('');
+    // const[age, getAge] = useState('');
+    // const[gender, getGender] = useState('');
+    // const[number, getNumber] = useState('');
 
 
     const getPatient=()=>{

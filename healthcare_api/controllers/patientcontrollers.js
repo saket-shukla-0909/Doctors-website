@@ -18,8 +18,7 @@ exports.singlepatient = async(request, response)=>{
 
 exports.registration = async(request, response)=>{
     let registrationData = {docid: request.body.docid, docname: request.body.docname, patientname: request.body.patientname, age:request.body.age, number:request.body.number,
-        symptoms: request.body.symptoms, treatment: request.body.treatment, gender:request.body.gender, passwordp:request.body.passwordp, date:request.body.date, gender:request.body.gender,
-        birth:request.body.birth, blood:request.body.blood, height:request.body.height, width:request.body.width, emailp:request.body.emailp, addressp: request.body.addressp, aboutp: request.body.aboutp 
+        symptoms: request.body.symptoms, treatment: request.body.treatment, gender:request.body.gender, passwordp:request.body.passwordp, date:request.body.date, gender:request.body.gender
     }
     console.log(registrationData);
     const Patient = new patient(registrationData);
@@ -37,7 +36,6 @@ exports.deletepatient= async(request, response)=>{
 exports.updatepatient= async(request, response)=>{
     let registrationData = { patientname: request.body.patientname, age:request.body.age, number:request.body.number, date: request.body.date, 
         symptoms: request.body.symptoms, treatment: request.body.treatment, gender: request.body.gender,passwordp:request.body.passwordp,
-        birth:request.body.birth, blood:request.body.blood, height:request.body.height, width:request.body.width, emailp:request.body.emailp, addressp: request.body.addressp, aboutp: request.body.aboutp
     }
     const userupdated = await patient.findByIdAndUpdate(request.params.id, registrationData);
     response.send(JSON.stringify({'status':200, 'error':'', 'messgae':userupdated}));
