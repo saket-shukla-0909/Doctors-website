@@ -36,7 +36,7 @@ const Home=()=>{
         const appointmentData ={appointmentname:appointmentname, appointnumber:appointnumber, appointtime:appointtime, appointreason:appointreason}
         axios.post('http://localhost:8080/appointments/registration', appointmentData).then((response)=>{
             console.log(response.data.message);
-            getAppointmentError('Your appointment has successfully created')
+            // getAppointmentError('Your appointment has successfully created')
         })
     }
    
