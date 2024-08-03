@@ -32,7 +32,7 @@ const Dashboard=()=>{
 
 
     const getDoctor=()=>{
-        axios.get('https://doctors-website-backend.onrender.com/doctors/singledoctorlist/'+doctorId).then((response)=>{
+        axios.get('http://localhost:8080/doctors/singledoctorlist/'+doctorId).then((response)=>{
             getDoctorName(response.data.message.doctorName);
             getDoctorSpeciality(response.data.message.doctorSpeciality);
             getDegree(response.data.message.degree);

@@ -45,7 +45,7 @@ const Registration=()=>{
                 getFormName('Update Patient Form');
                 getButtonName('Update Patient');
 
-                axios.get('https://doctors-website-backend.onrender.com/patients/singlepatientlist/'+params.id).then((response)=>{
+                axios.get('http://localhost:8080/patients/singlepatientlist/'+params.id).then((response)=>{
                 getPatientName(response.data.message.patientname);
                 getAge(response.data.message.age);
                 getNumber(response.data.message.number);
@@ -144,7 +144,7 @@ const Registration=()=>{
         console.log(patientname, age, number, symptoms, treatment, email, password);
         if(params.id){
             const registrationData = {patientname:patientname, age:age, number:number, gender:gender, symptoms:symptoms, treatment:treatment, passwordp:passwordp, date:date}
-            axios.put('https://doctors-website-backend.onrender.com/patients/updatepatient/'+params.id, registrationData).then((response)=>{
+            axios.put('http://localhost:8080/patients/updatepatient/'+params.id, registrationData).then((response)=>{
                 console.log(response);
                 navigate('/patientlist');
                 getFormError('Patient has successfully updated')
@@ -153,7 +153,7 @@ const Registration=()=>{
 
             let registrationData ={email:email, password:password}
             console.log(registrationData);
-            axios.post('https://doctors-website-backend.onrender.com/doctors/logindoctor',registrationData).then((response)=>{
+            axios.post('http://localhost:8080/doctors/logindoctor',registrationData).then((response)=>{
 
                 if(response.data.message=='either username or password is wrong'){
                     getFormError(response.data.message)
@@ -170,13 +170,13 @@ const Registration=()=>{
             })
         }else if(buttonname =='Doctors Registration'){
             const registrationData = {doctorName:doctorName, doctorSpeciality:doctorSpeciality, doctorNumber:doctorNumber, email:email, password:password, experience:experience, language:language, typesof:typesof, address:address,biography: biography,degree: degree}
-            axios.post('https://doctors-website-backend.onrender.com/doctors/registration', registrationData).then((response)=>{
+            axios.post('http://localhost:8080/doctors/registration', registrationData).then((response)=>{
                 console.log(response.data.message);
                 navigate('/Loginpage')
             })
         }else if(buttonname=='Patient Login'){
             let registrationData ={number:number, passwordp:passwordp}
-            axios.post('https://doctors-website-backend.onrender.com/patients/login',registrationData).then((response)=>{
+            axios.post('http://localhost:8080/patients/login',registrationData).then((response)=>{
 
                 if(response.data.message=='either number or password is wrong'){
                     getFormError(response.data.message)
@@ -190,7 +190,7 @@ const Registration=()=>{
             })}else{
             const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender}
             console.log(registrationData);
-            axios.post('https://doctors-website-backend.onrender.com/patients/registration', registrationData).then((response)=>{
+            axios.post('http://localhost:8080/patients/registration', registrationData).then((response)=>{
                 console.log(response.data.message);
                     navigate('/patientlistpage');
             })

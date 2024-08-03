@@ -18,7 +18,7 @@ const Pprescription=()=>{
     const [gender, getGender] = useState('');
     const [date, getDate] = useState('');
     const getPatient=()=>{
-        axios.get('https://doctors-website-backend.onrender.com/patients/singlepatient/'+patientId).then((response)=>{
+        axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
             getPatientName(response.data.message.patientname);
             getAge(response.data.message.age);
             getDocname(response.data.message.docname);
