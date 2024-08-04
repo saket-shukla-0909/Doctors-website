@@ -188,7 +188,7 @@ const Registration=()=>{
                     navigate('/MyProfilespage')
                 }
             })}else{
-            const registrationData = {docid:doctorId, docname:doctorName, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender}
+            const registrationData = {docid:doctorId, docname:doctorname, patientname:patientname, age:age, number:number,passwordp:passwordp, gender:gender, treatment:treatment, symptoms:symptoms}
             console.log(registrationData);
             axios.post('http://localhost:8080/patients/registration', registrationData).then((response)=>{
                 console.log(response.data.message);

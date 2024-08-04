@@ -12,12 +12,12 @@ const Patientlist=()=>{
     const [patientData, getPatientData] = useState('');
     let doctorId = localStorage.getItem('doctorId');
     const allpatientlist=()=>{
-            axios.get('https://doctors-website-backend.onrender.com/patients/singlepatientlist/' +doctorId).then((response)=>{
+            axios.get('http://localhost:8080/patients/singlepatientlist/' +doctorId).then((response)=>{
                 getPatientData(response.data.message);
             })
         }
     const deleteHandler=(id)=>{
-        axios.delete('https://doctors-website-backend.onrender.com/patients/deletepatient/'+id).then((response)=>{
+        axios.delete('http://localhost:8080/patients/deletepatient/'+id).then((response)=>{
             allpatientlist();
         })
     }

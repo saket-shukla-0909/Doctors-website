@@ -54,7 +54,7 @@ const Pdashboard=()=>{
 
 
     const getPatient=()=>{
-        axios.get('https://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
+        axios.get('http://localhost:8080/patients/singlepatient/'+patientId).then((response)=>{
             getPatientName(response.data.message.patientname);
             
         })
